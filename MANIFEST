@@ -1,0 +1,7 @@
+MANIFEST
+LICENSE
+Makefile.PL
+README.md
+lib/InteraxiomApi.pm
+lib/InteraxiomApi/Answer.pm
+t/00-InteraxiomApi.t
