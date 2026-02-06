@@ -80,7 +80,7 @@ sub new {
             $endpoint = $configuration->{default}->{endpoint};
         }
         if (not $endpoint) {
-            carp 'Missing default endpoint in interaxiom.conf: defaulting to api-myaccount';
+            carp 'Missing default endpoint in interaxiom-api.conf: defaulting to api-myaccount';
             $endpoint = 'api-myaccount';
         }
         if (not exists $configKey{$endpoint}) {
@@ -133,7 +133,7 @@ sub setRequestTimeout {
 
 sub retrieveConfiguration {
     my $fh;
-    foreach my $filepath ("$ENV{PWD}/interaxiom.conf", "$ENV{HOME}/.interaxiom.conf", '/etc/interaxiom.conf') {
+    foreach my $filepath ("$ENV{PWD}/interaxiom-api.conf", "$ENV{HOME}/.interaxiom-api.conf", '/etc/interaxiom-api.conf') {
         open($fh, '<', $filepath) and last;
         undef $fh;
     }
