@@ -18,9 +18,9 @@ use Digest::SHA 'sha1_hex';
 # Class constants
 
 use constant {
-    API_INTERNAL => 'https://api.interaxiom.local/internal',
-    API_PRIVATE => 'https://api.interaxiom.com.au/private',
-    API_MYACCOUNT => 'https://api.interaxiom.com.au/myaccount',
+    API_INTERNAL	=> 'https://api.interaxiom.local/internal',
+    API_PRIVATE		=> 'https://api.interaxiom.com.au/private',
+    API_MYACCOUNT	=> 'https://api.interaxiom.com.au/myaccount',
 };
 
 # End - Class constants
@@ -36,15 +36,15 @@ my $Json = JSON->new->allow_nonref;
 
 my @accessRuleMethods = qw{ GET POST PUT DELETE };
 my %configKey = (
-    'api-internal' => API_INTERNAL,
-    'api-private' => API_PRIVATE,
+    'api-internal'	=> API_INTERNAL,
+    'api-private'	=> API_PRIVATE,
     'api-myaccount' => API_MYACCOUNT,
 );
 
 my %reverseConfigKey = reverse %configKey;
 
 my %configKeySnakeToCamel = (
-    'applicationKey'    => 'application_key',
+    'applicationKey'	=> 'application_key',
     'publicKey'			=> 'public_key',
     'privateKey'		=> 'private_key',
 );
@@ -66,7 +66,7 @@ sub new {
 
     if ($params{'type'}) {
         if (not exists $reverseConfigKey{$params{'type'}}) {
-            carp 'Invalid type parameter: defaulting to API_MYACCOUNT';
+            carp 'Invalid type parameter: defaulting to api-myaccount';
             $params{'type'} = API_MYACCOUNT;
         }
     }
@@ -288,13 +288,13 @@ There is only one constructor: C<new>.
 
 Its parameters are:
 
-    Parameter           Mandatory                               Default                 Usage
-    ------------        ------------                            ----------              --------
-    type                Carp if missing                         API_MYACCOUNT()			Determine if you'll use public or private Interaxiom API (possible values are API_MYACCOUNT, API_PRIVATE and API_INTERNAL)
-    timeout             No                                      10                      Set the timeout LWP::UserAgent will use
-    applicationKey      Yes                                     -                       Your application key
-    publicKey			Yes                                     -                       Your application secret
-    privateKey			Yes, unless for a credential request    -                       Your consumer key
+    Parameter           Mandatory                               Default                 		Usage
+    ------------        ------------                            ----------              		--------
+    type				Carp if missing                         InteraxiomApi::API_MYACCOUNT	Determine if you'll use public or private Interaxiom API (possible values are API_MYACCOUNT, API_PRIVATE and API_INTERNAL)
+    timeout             No                                      10                      		Set the timeout LWP::UserAgent will use
+    applicationKey      Yes                                     -                       		Your application key
+    publicKey			Yes                                     -                       		Your application secret
+    privateKey			Yes										-								Your consumer key
 
 =head2 API_MYACCOUNT
 
