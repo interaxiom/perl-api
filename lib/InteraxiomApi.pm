@@ -18,9 +18,9 @@ use Digest::SHA 'sha1_hex';
 # Class constants
 
 use constant {
-    API_INTERNAL	=> 'https://api.interaxiom.local/internal',
-    API_PRIVATE		=> 'https://api.interaxiom.com.au/private',
-    API_MYACCOUNT	=> 'https://api.interaxiom.com.au/myaccount',
+    API_INTERNAL => 'https://api.interaxiom.local/internal',
+    API_PRIVATE => 'https://api.interaxiom.com.au/private',
+    API_MYACCOUNT => 'https://api.interaxiom.com.au/myaccount',
 };
 
 # End - Class constants
@@ -36,17 +36,17 @@ my $Json = JSON->new->allow_nonref;
 
 my @accessRuleMethods = qw{ GET POST PUT DELETE };
 my %configKey = (
-    'api-internal'	=> API_INTERNAL,
-    'api-private'	=> API_PRIVATE,
+    'api-internal' => API_INTERNAL,
+    'api-private' => API_PRIVATE,
     'api-myaccount' => API_MYACCOUNT,
 );
 
 my %reverseConfigKey = reverse %configKey;
 
 my %configKeySnakeToCamel = (
-    'applicationKey'	=> 'application_key',
-    'publicKey'			=> 'public_key',
-    'privateKey'		=> 'private_key',
+    'applicationKey' => 'application_key',
+    'publicKey' => 'public_key',
+    'privateKey' => 'private_key',
 );
 
 # End - Class variables
