@@ -6,15 +6,15 @@ use warnings;
 use constant VERSION => '1.2';
 
 use overload (
-    bool        => \&isSuccess,
-    '!'         => \&isFailure,
-    fallback    => 0,
-    '""'        => \&toString,
+    bool => \&isSuccess,
+    '!' => \&isFailure,
+    fallback => 0,
+    '""' => \&toString,
 );
 
-use Scalar::Util    'blessed';
-use Carp            qw{ carp croak };
-use JSON            ();
+use Scalar::Util 'blessed';
+use Carp qw{ carp croak };
+use JSON ();
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Class variables
@@ -113,7 +113,7 @@ sub toString {
         return $self->content;
     }
     else {
-        my $queryID = $self->{'response'}->header('X-INTERAXIOM-QUERYID') || '';
+        my $queryID = $self->{'response'}->header('X-Interaxiom-QueryID') || '';
         return sprintf("%s (Request-ID: %s)", $self->error, $queryID);
     }
 }
