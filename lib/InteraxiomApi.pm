@@ -18,7 +18,6 @@ use Digest::SHA 'sha1_hex';
 # Class constants
 
 use constant {
-    API_INTERNAL => 'https://api.interaxiom.local/internal',
     API_PRIVATE => 'https://api.interaxiom.com.au/private',
     API_MYACCOUNT => 'https://api.interaxiom.com.au/myaccount',
 };
@@ -36,7 +35,6 @@ my $Json = JSON->new->allow_nonref;
 
 my @accessRuleMethods = qw{ GET POST PUT DELETE };
 my %configKey = (
-    'api-internal' => API_INTERNAL,
     'api-private' => API_PRIVATE,
     'api-myaccount' => API_MYACCOUNT,
 );
@@ -290,7 +288,7 @@ Its parameters are:
 
     Parameter           Mandatory                               Default                 		Usage
     ------------        ------------                            ----------              		--------
-    type				Carp if missing                         InteraxiomApi::API_MYACCOUNT	Determine if you'll use public or private Interaxiom API (possible values are API_MYACCOUNT, API_PRIVATE and API_INTERNAL)
+    type				Carp if missing                         InteraxiomApi::API_MYACCOUNT	Determine if you'll use public or private Interaxiom API (possible values are API_PRIVATE and API_MYACCOUNT)
     timeout             No                                      10                      		Set the timeout LWP::UserAgent will use
     applicationKey      Yes                                     -                       		Your application key
     publicKey			Yes                                     -                       		Your application secret
@@ -299,10 +297,6 @@ Its parameters are:
 =head2 API_MYACCOUNT
 
 L<Constant|constant> that points to the root URL of Interaxiom customer API.
-
-=head2 API_INTERNAL
-
-L<Constant|constant> that points to the root URL of Interaxiom internal API.
 
 =head2 API_PRIVATE
 
