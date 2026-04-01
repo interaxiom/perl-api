@@ -18,8 +18,8 @@ use Digest::SHA 'sha1_hex';
 # Class constants
 
 use constant {
-    API_PRIVATE => 'https://api.interaxiom.com.au/private',
-    API_MYACCOUNT => 'https://api.interaxiom.com.au/myaccount',
+    API_PRIVATE => 'https://api.interaxiom.com.au',
+    API_MYACCOUNT => 'https://myaccount.interaxiom.com.au/api',
 };
 
 # End - Class constants
