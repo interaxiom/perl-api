@@ -61,7 +61,7 @@ $ make install
 Note: You can add the perl-api library to your application without having to compile and install the package if required:
 
 ```
-use lib "vendor/interaxiom/perl-api/lib";
+use lib "lib/interaxiom/perl-api/lib";
 ```
 
 Interaxiom Examples
